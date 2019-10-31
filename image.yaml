@@ -45,8 +45,7 @@ envs:
       value: "false"
 
 packages:
-    repositories:
-        - jboss-os
+    content_sets_file: content_sets.yml
     install:
         - hostname
         - libaio
@@ -54,11 +53,11 @@ packages:
 
 modules:
       repositories:
+          - path: modules
           - name: cct_module
             git:
-                  url: https://github.com/jboss-openshift/cct_module.git
-                  ref: sprint-26
-          - path: modules
+                 url: https://github.com/artemiscloud/cct_module.git
+                 ref: ENTMQBR-3039
 
       install:
           - name: jboss.container.user
